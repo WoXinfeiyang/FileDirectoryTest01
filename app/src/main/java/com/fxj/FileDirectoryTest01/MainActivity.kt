@@ -2,6 +2,7 @@ package com.fxj.FileDirectoryTest01
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
 import android.view.View
 
@@ -28,4 +29,20 @@ class MainActivity : AppCompatActivity() {
         var getCacheDirPath=view.context.getCacheDir().absolutePath;
         Log.d(TAG,"##onBtn03Click##context.getCacheDir()=${getCacheDirPath}")
     }
+
+    fun onBtn04Click(view: View) {
+        var getExternalStorageDirectoryPath=Environment.getExternalStorageDirectory().absolutePath;
+        Log.d(TAG,"##onBtn04Click##Environment.getExternalStorageDirectory()=${getExternalStorageDirectoryPath}")
+    }
+
+    fun onBtn05Click(view: View) {
+        var getExternalFilesDirPath= view.context.getExternalFilesDir(null)?.absolutePath;
+        Log.d(TAG,"##onBtn05Click##context.getExternalFilesDir(null)=${getExternalFilesDirPath}")
+    }
+
+    fun onBtn06Click(view: View) {
+        var getExternalCacheDirPath= view.context.getExternalCacheDir()?.absolutePath;
+        Log.d(TAG,"##onBtn05Click##context.getExternalCacheDir()=${getExternalCacheDirPath}")
+    }
+
 }
